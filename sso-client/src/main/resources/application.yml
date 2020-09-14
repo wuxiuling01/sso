@@ -1,0 +1,22 @@
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8000/oauth/token
+      client-id: admin
+      client-secret: admin
+      scope: all
+      user-authorization-uri: http://localhost:8000/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:8000/oauth/token_key
+#        盐
+        key-value: besokuse
+      user-info-uri: http://localhost:8000/
+
+server:
+  port: 8001
+  #    登录重定向，授权不成功。。。。一下午over
+  servlet:
+    session:
+      cookie:
+        name: OAUTH1
